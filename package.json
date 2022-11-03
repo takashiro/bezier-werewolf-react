@@ -1,0 +1,25 @@
+{
+  "name": "@bezier/werewolf-react",
+  "version": "0.1.0",
+  "description": "Web Client of One Night Ultimate Werewolf (React.js)",
+  "main": "src/index.tsx",
+  "scripts": {
+    "test": "npm run lint && playwright test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/takashiro/bezier-werewolf-react.git"
+  },
+  "keywords": [
+    "one",
+    "night",
+    "werewolf",
+    "react"
+  ],
+  "author": "Kazuichi Takashiro",
+  "license": "AGPL-3.0",
+  "bugs": {
+    "url": "https://github.com/takashiro/bezier-werewolf-react/issues"
+  },
+  "homepage": "https://github.com/takashiro/bezier-werewolf-react#readme"
+}
