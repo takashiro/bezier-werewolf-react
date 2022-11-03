@@ -1,0 +1,29 @@
+{
+	// Use IntelliSense to learn about possible attributes.
+	// Hover to view descriptions of existing attributes.
+	// For more information, visit: https://go.microsoft.com/fwlink/?linkid=830387
+	"version": "0.2.0",
+	"configurations": [
+		{
+			"type": "chrome",
+			"request": "launch",
+			"name": "Chrome",
+			"url": "http://localhost:9526",
+			"webRoot": "${workspaceFolder}/dist"
+		},
+		{
+			"name": "Playwright",
+			"type": "node",
+			"request": "launch",
+			"args": ["playwright", "test", "--headed", "${file}"],
+			"cwd": "${workspaceFolder}",
+			"autoAttachChildProcesses": true,
+			"runtimeExecutable": "npx",
+			"console": "integratedTerminal",
+			"skipFiles": [
+					"${workspaceFolder}/node_modules/**/*.js",
+					"<node_internals>/**/*.js"
+			]
+		}
+	]
+}

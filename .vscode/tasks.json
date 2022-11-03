@@ -1,0 +1,33 @@
+{
+	// See https://go.microsoft.com/fwlink/?LinkId=733558
+	// for the documentation about the tasks.json format
+	"version": "2.0.0",
+	"tasks": [
+		{
+			"label": "Fix Linter Errors",
+			"type": "shell",
+			"command": "npx eslint --fix ${file}",
+			"problemMatcher": []
+		},
+		{
+			"label": "Update Messages (Current File)",
+			"type": "shell",
+			"command": "npx linguist update ${file}"
+		},
+		{
+			"label": "Update Messages (All Files)",
+			"type": "shell",
+			"command": "npx linguist update"
+		},
+		{
+			"label": "Prune Messages",
+			"type": "shell",
+			"command": "npx linguist prune"
+		},
+		{
+			"label": "Release Messages",
+			"type": "shell",
+			"command": "npx linguist release"
+		}
+	]
+}
