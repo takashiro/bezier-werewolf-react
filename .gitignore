@@ -1,4 +1,4 @@
-/dist/static/
-/dist/index.html
+/dist/
+!/dist/style/
 /node_modules/
 /playwright-report/

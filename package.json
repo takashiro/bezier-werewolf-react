@@ -7,7 +7,7 @@
     "start": "webpack serve --mode=development",
     "build": "webpack",
     "debug": "webpack --mode=development",
-    "test": "npm run lint",
+    "test": "npm run lint && playwright test",
     "lint": "eslint --ext=ts,tsx,js ."
   },
   "repository": {
@@ -26,10 +26,17 @@
     "url": "https://github.com/takashiro/bezier-werewolf-react/issues"
   },
   "homepage": "https://github.com/takashiro/bezier-werewolf-react#readme",
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-intl": "^6.2.1"
+  },
   "devDependencies": {
     "@bezier/werewolf-server": "^0.4.6",
     "@karuta/linguist": "^0.5.0",
     "@playwright/test": "^1.27.1",
+    "@types/react": "^18.0.25",
+    "@types/react-dom": "^18.0.8",
     "@typescript-eslint/eslint-plugin": "^5.42.0",
     "@typescript-eslint/parser": "^5.42.0",
     "css-loader": "^6.7.1",
@@ -42,8 +49,6 @@
     "eslint-plugin-react-hooks": "^4.6.0",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.6.1",
-    "react": "^18.2.0",
-    "react-dom": "^18.2.0",
     "sass": "^1.55.0",
     "sass-loader": "^13.1.0",
     "ts-loader": "^9.4.1",

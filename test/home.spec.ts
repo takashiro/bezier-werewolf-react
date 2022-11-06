@@ -2,6 +2,6 @@ import { expect, test } from '@playwright/test';
 
 test('It opens home page', async ({ page }) => {
 	await page.goto('/');
-	const content = await page.textContent('body');
-	expect(content).toBe('Loading...');
+	const img = page.locator('header img');
+	expect(await img.getAttribute('alt')).toBe('Game Assistant for One Night Ultimate Werewolf');
 });
