@@ -1,4 +1,5 @@
 /dist/
 !/dist/style/
 /node_modules/
+/output/
 /playwright-report/

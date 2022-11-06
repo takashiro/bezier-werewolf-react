@@ -1,0 +1,17 @@
+.lobby {
+	margin: 0 auto;
+	padding: 5px 30px;
+	text-align: center;
+
+	.creator,
+	.entrance {
+		margin: 60px 0;
+	}
+
+	button,
+	input {
+		width: 200px;
+		margin: 20px;
+		font-size: 18px;
+	}
+}

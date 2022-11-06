@@ -35,3 +35,27 @@ main.message {
 		flex: 1 1 auto;
 	}
 }
+
+button,
+input {
+	border-radius: 6px;
+	text-align: center;
+	height: 2.5em;
+	line-height: 2.5em;
+	box-sizing: content-box;
+	padding: 0 0.8em;
+}
+
+input[type="text"],
+input[type="number"] {
+	color: rgb(32, 32, 32);
+	background: rgba(255, 255, 255, 0.85);
+	border: none;
+}
+
+button {
+	color: white;
+	border: none;
+	background: rgb(126, 158, 9);
+	box-shadow: 1px 1px 3px yellowgreen;
+}

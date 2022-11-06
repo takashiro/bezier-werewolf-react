@@ -1,7 +1,22 @@
 [
 	{
+		"id": "CMbX51",
+		"defaultMessage": "Create Room",
+		"message": "创建房间"
+	},
+	{
 		"id": "i0mGtU",
 		"defaultMessage": "Game Assistant for One Night Ultimate Werewolf",
 		"message": "一夜终极狼人游戏助手"
+	},
+	{
+		"id": "MKDHEa",
+		"defaultMessage": "Join Room",
+		"message": "加入房间"
+	},
+	{
+		"id": "tNDcxP",
+		"defaultMessage": "Room Number",
+		"message": "房间号"
 	}
 ]
