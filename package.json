@@ -4,7 +4,7 @@
   "description": "Web Client of One Night Ultimate Werewolf (React.js)",
   "main": "src/index.tsx",
   "scripts": {
-    "start": "webpack serve",
+    "start": "webpack serve --mode=development",
     "build": "webpack",
     "debug": "webpack --mode=development",
     "test": "npm run lint",

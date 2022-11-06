@@ -1,0 +1,17 @@
+body {
+	margin: 0;
+	padding: 0;
+}
+
+#root {
+	min-height: 100vh;
+	color: white;
+	background: #090408 url(../style/background.webp) no-repeat;
+	background-size: 100% auto;
+}
+
+main.message {
+	padding-top: 380px;
+	text-align: center;
+	font-size: 16pt;
+}
