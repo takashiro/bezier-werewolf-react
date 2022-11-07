@@ -1,0 +1,39 @@
+.role-card {
+	h3 {
+		display: block;
+		text-align: center;
+		margin: 10px 0;
+		font-size: 10pt;
+	}
+
+	.image {
+		display: block;
+		margin: 10px auto;
+		width: 180px;
+		height: 180px;
+		position: relative;
+
+		img.background,
+		img.content {
+			position: absolute;
+			top: 0;
+			left: 0;
+			width: 100%;
+			height: 100%;
+		}
+	}
+
+	p.background {
+		display: block;
+		font-size: 8pt;
+		width: 80%;
+		margin: 0.5em auto;
+		color: gainsboro;
+	}
+
+	p.description {
+		display: block;
+		width: 80%;
+		margin: 0 auto;
+	}
+}
