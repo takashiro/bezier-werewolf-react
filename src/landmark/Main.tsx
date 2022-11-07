@@ -1,13 +1,36 @@
 import React from 'react';
-import Context from '../page/Context';
+import Context, { ContextType } from '../page/Context';
 
 import Lobby from '../page/Lobby';
+import RoomCreator from '../page/RoomCreator';
+
+const params = new URLSearchParams(window.location.search);
+const type = params.get('type');
 
 function MainContent(): JSX.Element {
-	const [context] = React.useState(Context.Lobby);
+	const [contextType, setContextType] = React.useState(type || ContextType.Lobby);
+	React.useEffect(() => {
+		function handleContextChange(e: PopStateEvent): void {
+			const { state } = e;
+			if (state) {
+				const { type } = e.state as Partial<Context>;
+				if (type) {
+					setContextType(type);
+				}
+			} else {
+				setContextType(ContextType.Lobby);
+			}
+		}
+		window.addEventListener('popstate', handleContextChange);
+		return () => {
+			window.removeEventListener('popstate', handleContextChange);
+		};
+	}, []);
 
-	switch (context) {
-	case Context.Lobby:
+	switch (contextType) {
+	case ContextType.RoomCreator:
+		return <RoomCreator />;
+	case ContextType.Lobby:
 	default:
 		return <Lobby />;
 	}

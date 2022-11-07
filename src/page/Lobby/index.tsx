@@ -3,6 +3,7 @@ import {
 	defineMessages,
 	useIntl,
 } from 'react-intl';
+import { ContextType, go } from '../Context';
 
 import './index.scss';
 
@@ -14,10 +15,15 @@ const desc = defineMessages({
 
 export default function Lobby(): JSX.Element {
 	const intl = useIntl();
+
+	function goToRoomCreator(): void {
+		go({ type: ContextType.RoomCreator });
+	}
+
 	return (
 		<div className="lobby">
 			<div className="creator">
-				<button type="button">
+				<button type="button" onClick={goToRoomCreator}>
 					{intl.formatMessage(desc.createRoom)}
 				</button>
 			</div>
