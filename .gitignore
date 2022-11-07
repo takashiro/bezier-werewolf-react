@@ -1,5 +1,6 @@
-/dist/
-!/dist/style/
+/dist/message/
+/dist/static/
+/dist/*.html
 /node_modules/
 /output/
 /playwright-report/
