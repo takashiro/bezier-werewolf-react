@@ -10,8 +10,9 @@
 
 	button,
 	input {
+		display: block;
 		width: 200px;
-		margin: 20px;
+		margin: 20px auto;
 		font-size: 18px;
 	}
 }
