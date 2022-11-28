@@ -8,7 +8,7 @@
     "build": "webpack",
     "debug": "webpack --mode=development",
     "test": "npm run lint && playwright test",
-    "lint": "eslint --ext=ts,tsx,js ."
+    "lint": "eslint --ext=ts,tsx,js --max-warnings=0 ."
   },
   "repository": {
     "type": "git",
