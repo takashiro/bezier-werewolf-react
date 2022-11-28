@@ -33,5 +33,20 @@
 		"id": "villager-name",
 		"defaultMessage": "Villager",
 		"message": "村民"
+	},
+	{
+		"id": "werewolf-background",
+		"defaultMessage": "Night falls. The werewolves were about to attack but found something unusual in the village. They hurried to transform back and waited for daylight.",
+		"message": "夜色渐深，狼人们正要动手时发现村里似乎有些不寻常，于是匆匆变回人形，等待天亮。"
+	},
+	{
+		"id": "werewolf-instruction",
+		"defaultMessage": "You may see other werewolves at night.",
+		"message": "你可以查看其他抽到狼人牌的玩家。"
+	},
+	{
+		"id": "werewolf-name",
+		"defaultMessage": "Werewolf",
+		"message": "狼人"
 	}
 ]

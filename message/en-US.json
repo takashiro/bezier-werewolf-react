@@ -33,5 +33,20 @@
 		"id": "villager-name",
 		"defaultMessage": "Villager",
 		"message": "Villager"
+	},
+	{
+		"id": "werewolf-background",
+		"defaultMessage": "Night falls. The werewolves were about to attack but found something unusual in the village. They hurried to transform back and waited for daylight.",
+		"message": "Night falls. The werewolves were about to attack but found something unusual in the village. They hurried to transform back and waited for daylight."
+	},
+	{
+		"id": "werewolf-instruction",
+		"defaultMessage": "You may see other werewolves at night.",
+		"message": "You may see other werewolves at night."
+	},
+	{
+		"id": "werewolf-name",
+		"defaultMessage": "Werewolf",
+		"message": "Werewolf"
 	}
 ]
