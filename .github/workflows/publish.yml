@@ -22,7 +22,9 @@ jobs:
         run: npm ci
       -
         name: Build
-        run: npm run build
+        run: |
+          npx linguist release
+          npm run build
       -
         name: Archive built artifacts
         run: (cd dist && tar czf bezier-werewolf-react.tgz ./*)
