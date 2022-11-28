@@ -15,6 +15,21 @@
 		"message": "加入房间"
 	},
 	{
+		"id": "team-other",
+		"defaultMessage": "Others",
+		"message": "其他角色"
+	},
+	{
+		"id": "team-villager",
+		"defaultMessage": "Team Villager",
+		"message": "村民阵营"
+	},
+	{
+		"id": "team-werewolf",
+		"defaultMessage": "Team Werewolf",
+		"message": "狼人阵营"
+	},
+	{
 		"id": "tNDcxP",
 		"defaultMessage": "Room Number",
 		"message": "房间号"

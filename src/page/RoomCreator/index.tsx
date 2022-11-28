@@ -1,8 +1,11 @@
 import React from 'react';
 import { useIntl } from 'react-intl';
 
-import Role from '@bezier/werewolf-core/Role';
-import Team from '@bezier/werewolf-client/game/TeamProfile';
+import {
+	Role,
+	Team,
+} from '@bezier/werewolf-core';
+import { TeamProfile } from '@bezier/werewolf-client';
 
 import RoleButton from '../../common/RoleButton';
 
@@ -10,12 +13,12 @@ import collections from '../../collection';
 
 import './index.scss';
 
-function loadTeams(): Team[] {
+function loadTeams(): TeamProfile[] {
 	const roles: Role[] = [];
 	for (const col of collections) {
 		roles.push(...col.getRoles());
 	}
-	return Team.fromRoles(roles);
+	return TeamProfile.fromRoles(roles);
 }
 
 export default function RoomCreator(): JSX.Element {
@@ -24,9 +27,10 @@ export default function RoomCreator(): JSX.Element {
 
 	return (
 		<div className="room-creator">
-			{teams.map((team) => (
-				<div className="team" key={`team-${team.team}`}>
-					{team.roles.map((role) => (
+			{teams.map(({ team, roles }) => (
+				<section className="team" key={`team-${team}`}>
+					<h2>{intl.formatMessage({ id: `team-${Team[team].toLowerCase()}` })}</h2>
+					{roles.map((role) => (
 						<RoleButton
 							key={`role-${role}`}
 							icon={Role[role]}
@@ -36,7 +40,7 @@ export default function RoomCreator(): JSX.Element {
 							})}
 						/>
 					))}
-				</div>
+				</section>
 			))}
 		</div>
 	);
