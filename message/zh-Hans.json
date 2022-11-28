@@ -18,5 +18,20 @@
 		"id": "tNDcxP",
 		"defaultMessage": "Room Number",
 		"message": "房间号"
+	},
+	{
+		"id": "villager-background",
+		"defaultMessage": "You went to bed at night, like always. It was a peaceful night.",
+		"message": "你入夜后就睡下了，这一夜一如既往的安稳。"
+	},
+	{
+		"id": "villager-instruction",
+		"defaultMessage": "Please find the werewolves among you, vote on one of them to lynch, and your team wins.",
+		"message": "天亮后，请仔细找出混入你们中间的狼人，投出狼人获得胜利。"
+	},
+	{
+		"id": "villager-name",
+		"defaultMessage": "Villager",
+		"message": "村民"
 	}
 ]

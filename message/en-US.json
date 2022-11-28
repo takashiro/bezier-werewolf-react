@@ -18,5 +18,20 @@
 		"id": "tNDcxP",
 		"defaultMessage": "Room Number",
 		"message": "Room Number"
+	},
+	{
+		"id": "villager-background",
+		"defaultMessage": "You went to bed at night, like always. It was a peaceful night.",
+		"message": "You went to bed at night, like always. It was a peaceful night."
+	},
+	{
+		"id": "villager-instruction",
+		"defaultMessage": "Please find the werewolves among you, vote on one of them to lynch, and your team wins.",
+		"message": "Please find the werewolves among you, vote on one of them to lynch, and your team wins."
+	},
+	{
+		"id": "villager-name",
+		"defaultMessage": "Villager",
+		"message": "Villager"
 	}
 ]
