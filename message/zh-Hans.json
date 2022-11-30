@@ -5,6 +5,21 @@
 		"message": "创建房间"
 	},
 	{
+		"id": "drunk-background",
+		"defaultMessage": "You are drunk at the bar. Why would you care who you are?",
+		"message": "你在酒吧喝得烂醉，你是谁又有什么关系呢？"
+	},
+	{
+		"id": "drunk-instruction",
+		"defaultMessage": "Choose a center card and exchange it with your own. You cannot view either card.",
+		"message": "你选择1张未使用的牌与自己的身份牌交换。你不能查看被交换的牌。"
+	},
+	{
+		"id": "drunk-name",
+		"defaultMessage": "Drunk",
+		"message": "酒鬼"
+	},
+	{
 		"id": "i0mGtU",
 		"defaultMessage": "Game Assistant for One Night Ultimate Werewolf",
 		"message": "一夜终极狼人游戏助手"

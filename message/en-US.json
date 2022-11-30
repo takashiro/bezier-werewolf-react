@@ -5,6 +5,21 @@
 		"message": "Create Room"
 	},
 	{
+		"id": "drunk-background",
+		"defaultMessage": "You are drunk at the bar. Why would you care who you are?",
+		"message": "You are drunk at the bar. Why would you care who you are?"
+	},
+	{
+		"id": "drunk-instruction",
+		"defaultMessage": "Choose a center card and exchange it with your own. You cannot view either card.",
+		"message": "Choose a center card and exchange it with your own. You cannot view either card."
+	},
+	{
+		"id": "drunk-name",
+		"defaultMessage": "Drunk",
+		"message": "Drunk"
+	},
+	{
 		"id": "i0mGtU",
 		"defaultMessage": "Game Assistant for One Night Ultimate Werewolf",
 		"message": "Game Assistant for One Night Ultimate Werewolf"
