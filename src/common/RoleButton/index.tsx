@@ -38,18 +38,21 @@ export default function RoleButton(props: RoleButtonProps): JSX.Element {
 		});
 	}, [setSelected, onChange]);
 
+	const icon = Role[role];
+	const label = intl.formatMessage({
+		id: `${icon.toLowerCase()}-name`,
+		defaultMessage: icon,
+	});
 	return (
 		<Clickable
 			className={classNames('role-button', { selected })}
 			onTrigger={toggle}
 			aria-pressed={selected}
+			aria-label={label}
 		>
 			<RoleIcon
-				icon={Role[role]}
-				name={intl.formatMessage({
-					id: `${Role[role].toLowerCase()}-name`,
-					defaultMessage: Role[role],
-				})}
+				icon={icon}
+				name={label}
 			/>
 		</Clickable>
 	);
