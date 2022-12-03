@@ -12,8 +12,8 @@ const desc = defineMessages({
 
 interface NumberInputProps {
 	defaultValue?: number;
-	minValue?: number;
-	maxValue?: number;
+	min?: number;
+	max?: number;
 	onChange?(e: React.ChangeEvent<HTMLInputElement>): void;
 }
 
@@ -21,8 +21,8 @@ export default function NumberInput(props: NumberInputProps): JSX.Element {
 	const intl = useIntl();
 	const {
 		defaultValue,
-		minValue,
-		maxValue,
+		min,
+		max,
 		onChange,
 	} = props;
 
@@ -35,11 +35,11 @@ export default function NumberInput(props: NumberInputProps): JSX.Element {
 		}
 		let value = Number.parseInt(num.value, 10) || 0;
 		value++;
-		if (maxValue !== undefined && value > maxValue) {
+		if (max !== undefined && value > max) {
 			return;
 		}
 		num.value = String(value);
-	}, [input, maxValue]);
+	}, [input, max]);
 
 	const handleDecrease = React.useCallback(() => {
 		const num = input.current;
@@ -48,7 +48,7 @@ export default function NumberInput(props: NumberInputProps): JSX.Element {
 		}
 		let value = Number.parseInt(num.value, 10) || 0;
 		value--;
-		if (minValue !== undefined && value < minValue) {
+		if (min !== undefined && value < min) {
 			return;
 		}
 		num.value = String(value);
@@ -57,6 +57,7 @@ export default function NumberInput(props: NumberInputProps): JSX.Element {
 	return (
 		<div className="number-input">
 			<Clickable
+				tabIndex={-1}
 				className="decrease"
 				aria-label={intl.formatMessage(desc.decrease)}
 				onTrigger={handleDecrease}
@@ -65,9 +66,12 @@ export default function NumberInput(props: NumberInputProps): JSX.Element {
 				ref={input}
 				type="number"
 				defaultValue={defaultValue}
+				min={min}
+				max={max}
 				onChange={onChange}
 			/>
 			<Clickable
+				tabIndex={-1}
 				className="increase"
 				aria-label={intl.formatMessage(desc.increase)}
 				onTrigger={handleIncrease}

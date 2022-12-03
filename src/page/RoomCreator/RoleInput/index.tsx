@@ -42,8 +42,8 @@ export default function RoleInput(props: RoleInputProps): JSX.Element {
 			/>
 			<NumberInput
 				defaultValue={defaultValue}
-				minValue={0}
-				maxValue={5}
+				min={0}
+				max={5}
 				onChange={handleChange}
 			/>
 		</div>
