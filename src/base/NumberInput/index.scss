@@ -1,0 +1,56 @@
+.number-input {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	.decrease,
+	.increase {
+		position: relative;
+		background: white;
+		width: 40px;
+		height: 40px;
+		border-radius: 20px;
+	}
+
+	.decrease::before,
+	.increase::before,
+	.increase::after {
+		position: absolute;
+		display: block;
+		background: black;
+		border-radius: 1px;
+	}
+
+	.decrease::before,
+	.increase::before {
+		width: 50%;
+		height: 2px;
+		content: '';
+		left: 25%;
+		top: calc(50% - 1px);
+	}
+
+	.increase::after {
+		width: 2px;
+		height: 50%;
+		border-radius: 1px;
+		content: '';
+		left: calc(50% - 1px);
+		top: 25%;
+	}
+
+	input[type="number"] {
+		width: 3em;
+		height: 40px;
+		line-height: 40px;
+		padding: 5px;
+		margin: 0 7px;
+		-moz-appearance: textfield;
+
+		&::-webkit-outer-spin-button,
+		&::-webkit-inner-spin-button {
+   		-webkit-appearance: none;
+    	margin: 0;
+		}
+	}
+}

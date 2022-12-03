@@ -20,9 +20,19 @@
 		"message": "Drunk"
 	},
 	{
+		"id": "H/XqXJ",
+		"defaultMessage": "Increase",
+		"message": "Increase"
+	},
+	{
 		"id": "i0mGtU",
 		"defaultMessage": "Game Assistant for One Night Ultimate Werewolf",
 		"message": "Game Assistant for One Night Ultimate Werewolf"
+	},
+	{
+		"id": "jLs6b9",
+		"defaultMessage": "Decrease",
+		"message": "Decrease"
 	},
 	{
 		"id": "MKDHEa",

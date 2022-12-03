@@ -20,9 +20,19 @@
 		"message": "酒鬼"
 	},
 	{
+		"id": "H/XqXJ",
+		"defaultMessage": "Increase",
+		"message": "增加"
+	},
+	{
 		"id": "i0mGtU",
 		"defaultMessage": "Game Assistant for One Night Ultimate Werewolf",
 		"message": "一夜终极狼人游戏助手"
+	},
+	{
+		"id": "jLs6b9",
+		"defaultMessage": "Decrease",
+		"message": "减少"
 	},
 	{
 		"id": "MKDHEa",
