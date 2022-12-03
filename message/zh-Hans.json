@@ -45,6 +45,21 @@
 		"message": "一夜终极狼人游戏助手"
 	},
 	{
+		"id": "insomniac-background",
+		"defaultMessage": "Everyone is asleep except you, struggling at night. You don't even know how many sleepless nights you have been through.",
+		"message": "整个村庄都睡了，唯独留下你与黑夜对峙。你已经记不得这是第几个不眠的夜晚。"
+	},
+	{
+		"id": "insomniac-instruction",
+		"defaultMessage": "You may check your card before daylight.",
+		"message": "天亮前你再次查看自己的身份牌。"
+	},
+	{
+		"id": "insomniac-name",
+		"defaultMessage": "Insomniac",
+		"message": "失眠者"
+	},
+	{
 		"id": "jLs6b9",
 		"defaultMessage": "Decrease",
 		"message": "减少"

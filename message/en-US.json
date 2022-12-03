@@ -45,6 +45,21 @@
 		"message": "Game Assistant for One Night Ultimate Werewolf"
 	},
 	{
+		"id": "insomniac-background",
+		"defaultMessage": "Everyone is asleep except you, struggling at night. You don't even know how many sleepless nights you have been through.",
+		"message": "Everyone is asleep except you, struggling at night. You don't even know how many sleepless nights you have been through."
+	},
+	{
+		"id": "insomniac-instruction",
+		"defaultMessage": "You may check your card before daylight.",
+		"message": "You may check your card before daylight."
+	},
+	{
+		"id": "insomniac-name",
+		"defaultMessage": "Insomniac",
+		"message": "Insomniac"
+	},
+	{
 		"id": "jLs6b9",
 		"defaultMessage": "Decrease",
 		"message": "Decrease"
