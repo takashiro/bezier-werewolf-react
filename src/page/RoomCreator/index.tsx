@@ -1,5 +1,4 @@
 import React from 'react';
-import { useIntl } from 'react-intl';
 
 import {
 	Role,
@@ -7,11 +6,10 @@ import {
 } from '@bezier/werewolf-core';
 import { TeamProfile } from '@bezier/werewolf-client';
 
-import RoleButton from '../../common/RoleButton';
-
 import collections from '../../collection';
 
 import './index.scss';
+import TeamSelector from './TeamSelector';
 
 function loadTeams(): TeamProfile[] {
 	const roles: Role[] = [];
@@ -21,26 +19,22 @@ function loadTeams(): TeamProfile[] {
 	return TeamProfile.fromRoles(roles);
 }
 
-export default function RoomCreator(): JSX.Element {
-	const intl = useIntl();
-	const [teams] = React.useState(loadTeams);
+const basicRoles: Map<Team, Role> = new Map([
+	[Team.Werewolf, Role.Werewolf],
+	[Team.Villager, Role.Villager],
+]);
 
+export default function RoomCreator(): JSX.Element {
+	const [teams] = React.useState(loadTeams);
 	return (
 		<div className="room-creator">
 			{teams.map(({ team, roles }) => (
-				<section className="team" key={`team-${team}`}>
-					<h2>{intl.formatMessage({ id: `team-${Team[team].toLowerCase()}` })}</h2>
-					{roles.map((role) => (
-						<RoleButton
-							key={`role-${role}`}
-							icon={Role[role]}
-							name={intl.formatMessage({
-								id: `${Role[role].toLowerCase()}-name`,
-								defaultMessage: Role[role],
-							})}
-						/>
-					))}
-				</section>
+				<TeamSelector
+					key={`team-${team}`}
+					team={team}
+					basic={basicRoles.get(team)}
+					roles={roles}
+				/>
 			))}
 		</div>
 	);
