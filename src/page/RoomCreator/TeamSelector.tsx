@@ -7,6 +7,7 @@ import {
 
 } from '@bezier/werewolf-core';
 
+import FocusList from '../../base/FocusList';
 import RoleButton from '../../common/RoleButton';
 
 import RoleInput from './RoleInput';
@@ -34,12 +35,19 @@ export default function TeamSelector(props: TeamSelectorProps): JSX.Element {
 			{basic && (
 				<RoleInput role={basic} onChange={onChange} />
 			)}
-			{roles.filter((role) => role !== basic).map((role) => (
-				<RoleButton
-					key={`role-${role}`}
-					role={role}
-				/>
-			))}
+			<FocusList
+				childSelector=".role-button"
+				orientation="horizontal"
+				aria-orientation="horizontal"
+			>
+				{roles.filter((role) => role !== basic).map((role) => (
+					<li key={`role-${role}`}>
+						<RoleButton
+							role={role}
+						/>
+					</li>
+				))}
+			</FocusList>
 		</section>
 	);
 }

@@ -7,9 +7,9 @@ import {
 import { TeamProfile } from '@bezier/werewolf-client';
 
 import collections from '../../collection';
+import TeamSelector from './TeamSelector';
 
 import './index.scss';
-import TeamSelector from './TeamSelector';
 
 function loadTeams(): TeamProfile[] {
 	const roles: Role[] = [];
