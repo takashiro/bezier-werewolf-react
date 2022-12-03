@@ -25,6 +25,21 @@
 		"message": "Increase"
 	},
 	{
+		"id": "hunter-background",
+		"defaultMessage": "You are a hunter who protects the village with your gun.",
+		"message": "You are a hunter who protects the village with your gun."
+	},
+	{
+		"id": "hunter-instruction",
+		"defaultMessage": "When you are lynched, all those who voted you dies. If any one of them is on Team Werewolf, Team Villager wins.",
+		"message": "When you are lynched, all those who voted you dies. If any one of them is on Team Werewolf, Team Villager wins."
+	},
+	{
+		"id": "hunter-name",
+		"defaultMessage": "Hunter",
+		"message": "Hunter"
+	},
+	{
 		"id": "i0mGtU",
 		"defaultMessage": "Game Assistant for One Night Ultimate Werewolf",
 		"message": "Game Assistant for One Night Ultimate Werewolf"
