@@ -7,3 +7,8 @@ export function isModiferKeyPressed(e: KeyboardEvent): boolean {
 export function isConfirmed(e: KeyboardEvent): boolean {
 	return e.code === 'Space' || e.code === 'Enter';
 }
+
+export function muteEvent(e: KeyboardEvent): void {
+	e.preventDefault();
+	e.stopPropagation();
+}
