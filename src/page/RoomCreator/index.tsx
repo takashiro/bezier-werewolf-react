@@ -8,6 +8,7 @@ import {
 import {
 	TeamProfile,
 	RoomConfiguration,
+	Lobby,
 } from '@bezier/werewolf-client';
 
 import collections from '../../collection';
@@ -37,8 +38,14 @@ const primaryRoles: Map<Team, Role> = new Map([
 	[Team.Villager, Role.Villager],
 ]);
 
-export default function RoomCreator(): JSX.Element {
+interface RoomCreatorProps {
+	lobby: Lobby;
+}
+
+export default function RoomCreator(props: RoomCreatorProps): JSX.Element {
 	const intl = useIntl();
+
+	const { lobby } = props;
 
 	const config = React.useMemo(() => {
 		const c = new RoomConfiguration(window.localStorage);
@@ -54,8 +61,14 @@ export default function RoomCreator(): JSX.Element {
 		config.setRoleNum(e.role, e.num);
 	}, []);
 
-	const handleSubmit = React.useCallback(() => {
+	const handleSubmit = React.useCallback(async () => {
 		config.save();
+		const roles = config.getRoles();
+		try {
+			await lobby.createRoom({ roles });
+		} catch (error) {
+			// ignore
+		}
 	}, []);
 
 	const handleCancel = React.useCallback(() => {

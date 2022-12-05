@@ -1,5 +1,7 @@
 import React from 'react';
+
 import Context, { ContextType } from '../page/Context';
+import { createLobby } from '../util/client';
 
 import Lobby from '../page/Lobby';
 import RoomCreator from '../page/RoomCreator';
@@ -27,9 +29,11 @@ function MainContent(): JSX.Element {
 		};
 	}, []);
 
+	const lobby = React.useMemo(createLobby, []);
+
 	switch (contextType) {
 	case ContextType.RoomCreator:
-		return <RoomCreator />;
+		return <RoomCreator lobby={lobby} />;
 	case ContextType.Lobby:
 	default:
 		return <Lobby />;
