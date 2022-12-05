@@ -1,5 +1,10 @@
 [
 	{
+		"id": "47FYwb",
+		"defaultMessage": "Cancel",
+		"message": "Cancel"
+	},
+	{
 		"id": "CMbX51",
 		"defaultMessage": "Create Room",
 		"message": "Create Room"
@@ -103,6 +108,11 @@
 		"id": "villager-name",
 		"defaultMessage": "Villager",
 		"message": "Villager"
+	},
+	{
+		"id": "VzzYJk",
+		"defaultMessage": "Create",
+		"message": "Create"
 	},
 	{
 		"id": "werewolf-background",

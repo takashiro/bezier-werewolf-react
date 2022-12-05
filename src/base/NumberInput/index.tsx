@@ -10,16 +10,23 @@ const desc = defineMessages({
 	decrease: { defaultMessage: 'Decrease' },
 });
 
+export interface ChangeEvent {
+	name?: string;
+	value: number;
+}
+
 interface NumberInputProps {
+	name?: string;
 	defaultValue?: number;
 	min?: number;
 	max?: number;
-	onChange?(e: React.ChangeEvent<HTMLInputElement>): void;
+	onChange?(e: ChangeEvent): void;
 }
 
 export default function NumberInput(props: NumberInputProps): JSX.Element {
 	const intl = useIntl();
 	const {
+		name,
 		defaultValue,
 		min,
 		max,
@@ -28,31 +35,37 @@ export default function NumberInput(props: NumberInputProps): JSX.Element {
 
 	const input = React.useRef<HTMLInputElement>(null);
 
-	const handleIncrease = React.useCallback(() => {
-		const num = input.current;
-		if (!num) {
+	const change = React.useCallback((delta: number) => {
+		const element = input.current;
+		if (!element) {
 			return;
 		}
-		let value = Number.parseInt(num.value, 10) || 0;
-		value++;
-		if (max !== undefined && value > max) {
-			return;
+		const oldValue = Number.parseInt(element.value, 10) || 0;
+		let newValue = oldValue + delta;
+		if (min !== undefined && newValue < min) {
+			newValue = min;
 		}
-		num.value = String(value);
-	}, [input, max]);
+		if (max !== undefined && newValue > max) {
+			newValue = max;
+		}
+		if (newValue !== oldValue) {
+			element.value = String(newValue);
+			onChange?.({ name, value: newValue });
+		}
+	}, [input, min, max]);
 
 	const handleDecrease = React.useCallback(() => {
-		const num = input.current;
-		if (!num) {
-			return;
-		}
-		let value = Number.parseInt(num.value, 10) || 0;
-		value--;
-		if (min !== undefined && value < min) {
-			return;
-		}
-		num.value = String(value);
-	}, [input]);
+		change(-1);
+	}, [change]);
+
+	const handleIncrease = React.useCallback(() => {
+		change(1);
+	}, [change]);
+
+	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+		const value = Number.parseInt(e.currentTarget.value, 10) || 0;
+		onChange?.({ name, value });
+	};
 
 	return (
 		<div className="number-input">
@@ -68,7 +81,7 @@ export default function NumberInput(props: NumberInputProps): JSX.Element {
 				defaultValue={defaultValue}
 				min={min}
 				max={max}
-				onChange={onChange}
+				onChange={handleChange}
 			/>
 			<Clickable
 				tabIndex={-1}

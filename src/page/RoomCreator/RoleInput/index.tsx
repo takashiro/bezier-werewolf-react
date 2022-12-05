@@ -2,17 +2,17 @@ import React from 'react';
 import { useIntl } from 'react-intl';
 import { Role } from '@bezier/werewolf-core';
 
-import NumberInput from '../../../base/NumberInput';
+import NumberInput, { ChangeEvent } from '../../../base/NumberInput';
 import RoleIcon from '../../../common/RoleIcon';
 
-import ChangeEvent from '../RoleChangeEvent';
+import RoleChangeEvent from '../RoleChangeEvent';
 
 import './index.scss';
 
 interface RoleInputProps {
 	role: Role;
 	defaultValue?: number;
-	onChange?(e: ChangeEvent): void;
+	onChange?(e: RoleChangeEvent): void;
 }
 
 export default function RoleInput(props: RoleInputProps): JSX.Element {
@@ -23,9 +23,8 @@ export default function RoleInput(props: RoleInputProps): JSX.Element {
 		onChange,
 	} = props;
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>): void => {
-		const num = Number.parseInt(e.currentTarget.value, 10);
-		onChange?.({ role, num });
+	const handleChange = (e: ChangeEvent): void => {
+		onChange?.({ role, num: e.value });
 	};
 
 	const roleId = Role[role];

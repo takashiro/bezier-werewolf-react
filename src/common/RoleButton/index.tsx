@@ -9,7 +9,7 @@ import RoleIcon from '../RoleIcon';
 
 import './index.scss';
 
-interface ChangeEvent {
+export interface ChangeEvent {
 	role: Role;
 	selected: boolean;
 }

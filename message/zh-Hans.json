@@ -1,5 +1,10 @@
 [
 	{
+		"id": "47FYwb",
+		"defaultMessage": "Cancel",
+		"message": "取消"
+	},
+	{
 		"id": "CMbX51",
 		"defaultMessage": "Create Room",
 		"message": "创建房间"
@@ -103,6 +108,11 @@
 		"id": "villager-name",
 		"defaultMessage": "Villager",
 		"message": "村民"
+	},
+	{
+		"id": "VzzYJk",
+		"defaultMessage": "Create",
+		"message": "创建"
 	},
 	{
 		"id": "werewolf-background",

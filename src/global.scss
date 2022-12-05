@@ -37,6 +37,7 @@ main.message {
 }
 
 button,
+.button,
 input {
 	border-radius: 6px;
 	text-align: center;
@@ -53,15 +54,30 @@ input[type="number"] {
 	border: none;
 }
 
-button {
+button,
+.button {
 	color: white;
 	border: none;
 	background: rgb(126, 158, 9);
 	box-shadow: 1px 1px 3px yellowgreen;
 }
 
+.button {
+	cursor: pointer;
+}
+
 h2 {
 	font-size: 1.2em;
 	text-align: center;
 	text-shadow: #090408 0 0 2px;
+}
+
+.button-area {
+	text-align: center;
+
+	.button {
+		display: inline-block;
+		min-width: 4em;
+		margin: 6px 10px;
+	}
 }
