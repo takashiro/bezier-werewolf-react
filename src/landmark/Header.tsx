@@ -16,7 +16,9 @@ export default function Header(): JSX.Element {
 	return (
 		<header>
 			<h1>
-				<img src="../style/logo.webp" alt={title} />
+				<a href="./">
+					<img src="../style/logo.webp" alt={title} />
+				</a>
 			</h1>
 		</header>
 	);
