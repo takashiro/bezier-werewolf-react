@@ -31,4 +31,4 @@ This is an open-source client for One Night Ultimate Werewolf.
 
 Running Environment
 -------------------
-* Node v16.x or later versions
+* Node v18.x or later versions
