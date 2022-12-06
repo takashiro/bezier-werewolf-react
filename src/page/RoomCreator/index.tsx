@@ -8,17 +8,16 @@ import {
 import {
 	TeamProfile,
 	RoomConfiguration,
-	Lobby,
 } from '@bezier/werewolf-client';
 
+import Clickable from '../../base/Clickable';
 import collections from '../../collection';
+import { ContextType, go } from '../Context';
 
 import TeamSelector from './TeamSelector';
 import RoleChangeEvent from './RoleChangeEvent';
 
 import './index.scss';
-import { ContextType, go } from '../Context';
-import Clickable from '../../base/Clickable';
 
 const desc = defineMessages({
 	create: { defaultMessage: 'Create' },
@@ -39,13 +38,11 @@ const primaryRoles: Map<Team, Role> = new Map([
 ]);
 
 interface RoomCreatorProps {
-	lobby: Lobby;
+	onSubmit?(config: RoomConfiguration): void;
 }
 
-export default function RoomCreator(props: RoomCreatorProps): JSX.Element {
+export default function RoomCreator({ onSubmit }: RoomCreatorProps): JSX.Element {
 	const intl = useIntl();
-
-	const { lobby } = props;
 
 	const config = React.useMemo(() => {
 		const c = new RoomConfiguration(window.localStorage);
@@ -63,12 +60,7 @@ export default function RoomCreator(props: RoomCreatorProps): JSX.Element {
 
 	const handleSubmit = React.useCallback(async () => {
 		config.save();
-		const roles = config.getRoles();
-		try {
-			await lobby.createRoom({ roles });
-		} catch (error) {
-			// ignore
-		}
+		onSubmit?.(config);
 	}, []);
 
 	const handleCancel = React.useCallback(() => {

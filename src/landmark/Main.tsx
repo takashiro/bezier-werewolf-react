@@ -1,5 +1,7 @@
 import React from 'react';
 
+import { RoomConfiguration } from '@bezier/werewolf-client';
+
 import Context, { ContextType } from '../page/Context';
 import { createLobby } from '../util/client';
 
@@ -10,7 +12,9 @@ const params = new URLSearchParams(window.location.search);
 const type = params.get('type');
 
 function MainContent(): JSX.Element {
+	const lobby = React.useMemo(createLobby, []);
 	const [contextType, setContextType] = React.useState(type || ContextType.Lobby);
+
 	React.useEffect(() => {
 		function handleContextChange(e: PopStateEvent): void {
 			const { state } = e;
@@ -29,11 +33,14 @@ function MainContent(): JSX.Element {
 		};
 	}, []);
 
-	const lobby = React.useMemo(createLobby, []);
+	const createRoom = React.useCallback((config: RoomConfiguration) => {
+		const roles = config.getRoles();
+		lobby.createRoom({ roles });
+	}, []);
 
 	switch (contextType) {
 	case ContextType.RoomCreator:
-		return <RoomCreator lobby={lobby} />;
+		return <RoomCreator onSubmit={createRoom} />;
 	case ContextType.Lobby:
 	default:
 		return <Lobby />;
