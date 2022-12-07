@@ -2,32 +2,33 @@ import React from 'react';
 
 import { RoomConfiguration } from '@bezier/werewolf-client';
 
-import Context, { ContextType } from '../page/Context';
+import Context, {
+	ContextType,
+	initialContext,
+} from '../page/Context';
 import { createLobby } from '../util/client';
 
 import Lobby from '../page/Lobby';
 import RoomCreator from '../page/RoomCreator';
 
-const params = new URLSearchParams(window.location.search);
-const type = params.get('type');
-
 function MainContent(): JSX.Element {
 	const lobby = React.useMemo(createLobby, []);
-	const [contextType, setContextType] = React.useState(type || ContextType.Lobby);
+	const [context, setContext] = React.useState(initialContext);
 
 	React.useEffect(() => {
 		function handleContextChange(e: PopStateEvent): void {
 			const { state } = e;
 			if (state) {
-				const { type } = e.state as Partial<Context>;
+				const { type, id } = e.state as Partial<Context>;
 				if (type) {
-					setContextType(type);
+					setContext({ type, id });
 				}
 			} else {
-				setContextType(ContextType.Lobby);
+				setContext({ type: ContextType.Lobby });
 			}
 		}
 		window.addEventListener('popstate', handleContextChange);
+
 		return () => {
 			window.removeEventListener('popstate', handleContextChange);
 		};
@@ -38,7 +39,7 @@ function MainContent(): JSX.Element {
 		lobby.createRoom({ roles });
 	}, []);
 
-	switch (contextType) {
+	switch (context.type) {
 	case ContextType.RoomCreator:
 		return <RoomCreator onSubmit={createRoom} />;
 	case ContextType.Lobby:
