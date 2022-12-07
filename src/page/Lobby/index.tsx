@@ -21,7 +21,7 @@ export default function Lobby(): JSX.Element {
 	}
 
 	return (
-		<div className="lobby">
+		<>
 			<div className="creator">
 				<button type="button" onClick={goToRoomCreator}>
 					{intl.formatMessage(desc.createRoom)}
@@ -36,6 +36,6 @@ export default function Lobby(): JSX.Element {
 					{intl.formatMessage(desc.enterRoom)}
 				</button>
 			</div>
-		</div>
+		</>
 	);
 }

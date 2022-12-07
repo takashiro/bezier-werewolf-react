@@ -68,7 +68,7 @@ export default function RoomCreator({ onSubmit }: RoomCreatorProps): JSX.Element
 	}, []);
 
 	return (
-		<div className="room-creator">
+		<>
 			{teams.map(({ team, roles }) => (
 				<TeamSelector
 					key={`team-${team}`}
@@ -93,6 +93,6 @@ export default function RoomCreator({ onSubmit }: RoomCreatorProps): JSX.Element
 					{intl.formatMessage(desc.create)}
 				</Clickable>
 			</div>
-		</div>
+		</>
 	);
 }
