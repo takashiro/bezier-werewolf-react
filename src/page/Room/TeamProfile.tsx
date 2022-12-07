@@ -17,13 +17,24 @@ export default function TeamProfile({
 	const teamName = Team[team];
 	return (
 		<section className="team">
-			<h3>{intl.formatMessage({ id: `team-${teamName.toLowerCase()}`, defaultMessage: `Team ${Team[team]}` })}</h3>
+			<h3>
+				{intl.formatMessage({
+					id: `team-${teamName.toLowerCase()}`,
+					defaultMessage: `Team ${Team[team]}`,
+				})}
+			</h3>
 			<ul>
-				{roles.map((role) => (
-					<li key={`role-${role}`}>
+				{roles.map((role, index) => ({
+					role,
+					key: `role-${role}-${index}`,
+				})).map(({ role, key }) => (
+					<li key={key}>
 						<RoleIcon
 							icon={Role[role]}
-							name={intl.formatMessage({ id: `${Role[role].toLowerCase()}-name`, defaultMessage: Role[role] })}
+							name={intl.formatMessage({
+								id: `${Role[role].toLowerCase()}-name`,
+								defaultMessage: Role[role],
+							})}
 						/>
 					</li>
 				))}

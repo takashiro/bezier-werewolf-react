@@ -32,6 +32,7 @@ export default function Room(props: RoomProps): JSX.Element {
 			<h2>{intl.formatMessage(desc.roomNumber, { id: room.getId() })}</h2>
 			{teams && teams.map(({ team, roles }) => (
 				<TeamProfile
+					key={`team-${team}`}
 					team={team}
 					roles={roles}
 				/>
