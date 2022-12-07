@@ -75,6 +75,21 @@
 		"message": "Decrease"
 	},
 	{
+		"id": "minion-background",
+		"defaultMessage": "You saw what the werewolves were doing at night and decided to help them. You want revenge. The village must be destroyed.",
+		"message": "You saw what the werewolves were doing at night and decided to help them. You want revenge. The village must be destroyed."
+	},
+	{
+		"id": "minion-instruction",
+		"defaultMessage": "You can see all the players who drew a werewolf card.",
+		"message": "You can see all the players who drew a werewolf card."
+	},
+	{
+		"id": "minion-name",
+		"defaultMessage": "Minion",
+		"message": "Minion"
+	},
+	{
 		"id": "MKDHEa",
 		"defaultMessage": "Join Room",
 		"message": "Join Room"

@@ -75,6 +75,21 @@
 		"message": "减少"
 	},
 	{
+		"id": "minion-background",
+		"defaultMessage": "You saw what the werewolves were doing at night and decided to help them. You want revenge. The village must be destroyed.",
+		"message": "你目睹了狼人的行动，决定暗中帮助他们，借狼人之手报复村庄。"
+	},
+	{
+		"id": "minion-instruction",
+		"defaultMessage": "You can see all the players who drew a werewolf card.",
+		"message": "你可以查看所有抽到狼人牌的玩家。"
+	},
+	{
+		"id": "minion-name",
+		"defaultMessage": "Minion",
+		"message": "爪牙"
+	},
+	{
 		"id": "MKDHEa",
 		"defaultMessage": "Join Room",
 		"message": "加入房间"
