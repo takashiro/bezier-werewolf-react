@@ -100,6 +100,11 @@
 		"message": "房间号：{id}"
 	},
 	{
+		"id": "robber-name",
+		"defaultMessage": "Robber",
+		"message": "盗贼"
+	},
+	{
 		"id": "seer-background",
 		"defaultMessage": "You are about to get asleep but found something is weird in the prophecy, something about murder.",
 		"message": "你正要入睡，预言球突然有些异样 —— 村庄里似乎暗藏杀机。"

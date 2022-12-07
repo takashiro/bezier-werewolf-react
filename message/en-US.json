@@ -100,6 +100,11 @@
 		"message": "Room Number: {id}"
 	},
 	{
+		"id": "robber-name",
+		"defaultMessage": "Robber",
+		"message": "Robber"
+	},
+	{
 		"id": "seer-background",
 		"defaultMessage": "You are about to get asleep but found something is weird in the prophecy, something about murder.",
 		"message": "You are about to get asleep but found something is weird in the prophecy, something about murder."
