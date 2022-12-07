@@ -120,6 +120,11 @@
 		"message": "Seer"
 	},
 	{
+		"id": "tanner-name",
+		"defaultMessage": "Tanner",
+		"message": "Tanner"
+	},
+	{
 		"id": "team-other",
 		"defaultMessage": "Others",
 		"message": "Others"

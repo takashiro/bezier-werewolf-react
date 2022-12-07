@@ -120,6 +120,11 @@
 		"message": "预言家"
 	},
 	{
+		"id": "tanner-name",
+		"defaultMessage": "Tanner",
+		"message": "皮匠"
+	},
+	{
 		"id": "team-other",
 		"defaultMessage": "Others",
 		"message": "其他角色"
