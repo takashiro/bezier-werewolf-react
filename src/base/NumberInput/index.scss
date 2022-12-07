@@ -46,12 +46,5 @@
 		line-height: 40px;
 		padding: 5px;
 		margin: 0 7px;
-		-moz-appearance: textfield;
-
-		&::-webkit-outer-spin-button,
-		&::-webkit-inner-spin-button {
-   		-webkit-appearance: none;
-    	margin: 0;
-		}
 	}
 }
