@@ -120,6 +120,21 @@
 		"message": "Room Number"
 	},
 	{
+		"id": "troublemaker-background",
+		"defaultMessage": "You broke a bottle in the witch's house by accident. Two persons in the village are exchanged because of you.",
+		"message": "You broke a bottle in the witch's house by accident. Two persons in the village are exchanged because of you."
+	},
+	{
+		"id": "troublemaker-instruction",
+		"defaultMessage": "You can exchange the role cards of two other players.",
+		"message": "You can exchange the role cards of two other players."
+	},
+	{
+		"id": "troublemaker-name",
+		"defaultMessage": "Troublemaker",
+		"message": "Troublemaker"
+	},
+	{
 		"id": "villager-background",
 		"defaultMessage": "You went to bed at night, like always. It was a peaceful night.",
 		"message": "You went to bed at night, like always. It was a peaceful night."

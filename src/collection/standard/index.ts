@@ -4,6 +4,7 @@ import { drunk } from './Drunk';
 import { hunter } from './Hunter';
 import { insomniac } from './Insomniac';
 import { minion } from './Minion';
+import { troublemaker } from './Troublemaker';
 import { villager } from './Villager';
 import { werewolf } from './Werewolf';
 
@@ -12,6 +13,7 @@ col.add(drunk);
 col.add(hunter);
 col.add(insomniac);
 col.add(minion);
+col.add(troublemaker);
 col.add(villager);
 col.add(werewolf);
 
