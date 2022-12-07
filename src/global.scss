@@ -82,12 +82,5 @@ h2 {
 	text-shadow: #090408 0 0 2px;
 }
 
-.button-area {
-	text-align: center;
-
-	.button {
-		display: inline-block;
-		min-width: 4em;
-		margin: 6px 10px;
-	}
-}
+@import './layout/button-area.scss';
+@import './layout/team.scss';

@@ -40,7 +40,7 @@ export default function TeamSelector(props: TeamSelectorProps): JSX.Element {
 	}, [onChange]);
 
 	return (
-		<section className="team-selector">
+		<section className="team team-selector">
 			<h2>{intl.formatMessage({ id: `team-${Team[team].toLowerCase()}` })}</h2>
 			{primary && (
 				<RoleInput role={primary} defaultValue={config.getRoleNum(primary)} onChange={onChange} />

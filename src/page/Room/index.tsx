@@ -1,6 +1,14 @@
 import React from 'react';
-import { Room as RoomModel } from '@bezier/werewolf-client';
 import { defineMessages, useIntl } from 'react-intl';
+
+import {
+	Room as RoomModel,
+	TeamProfile as TeamModel,
+} from '@bezier/werewolf-client';
+
+import TeamProfile from './TeamProfile';
+
+import './index.scss';
 
 const desc = defineMessages({
 	roomNumber: { defaultMessage: 'Room Number: {id}' },
@@ -16,9 +24,18 @@ export default function Room(props: RoomProps): JSX.Element {
 		room,
 	} = props;
 
+	const roles = room.getRoles();
+	const teams = roles && TeamModel.fromRoles(roles);
+
 	return (
-		<div className="room-creator">
+		<>
 			<h2>{intl.formatMessage(desc.roomNumber, { id: room.getId() })}</h2>
-		</div>
+			{teams && teams.map(({ team, roles }) => (
+				<TeamProfile
+					team={team}
+					roles={roles}
+				/>
+			))}
+		</>
 	);
 }

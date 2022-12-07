@@ -1,0 +1,44 @@
+.team {
+	margin: 7px;
+
+	h3 {
+		text-align: center;
+	}
+
+	ul {
+		list-style: none;
+		padding: 0;
+		margin: 0;
+
+		@media screen and (min-width: 780px) {
+			display: block;
+
+			> li {
+				display: inline-block;
+				margin: 7px;
+			}
+		}
+
+		@media screen and (max-width: 780px) {
+			display: grid;
+			gap: 7px;
+			grid-template-columns: repeat(8, minmax(0, 1fr));
+		}
+
+		@media screen and (max-width: 630px) {
+			grid-template-columns: repeat(6, minmax(0, 1fr));
+		}
+
+		@media screen and (max-width: 470px) {
+			grid-template-columns: repeat(5, minmax(0, 1fr));
+		}
+
+		@media screen and (max-width: 370px) {
+			grid-template-columns: repeat(4, minmax(0, 1fr));
+		}
+
+		@media screen and (max-width: 320px) {
+			grid-template-columns: repeat(3, minmax(0, 1fr));
+		}
+	}
+}
