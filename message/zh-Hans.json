@@ -25,6 +25,11 @@
 		"message": "酒鬼"
 	},
 	{
+		"id": "gjBiyj",
+		"defaultMessage": "Loading...",
+		"message": "加载中……"
+	},
+	{
 		"id": "H/XqXJ",
 		"defaultMessage": "Increase",
 		"message": "增加"
@@ -73,6 +78,11 @@
 		"id": "MKDHEa",
 		"defaultMessage": "Join Room",
 		"message": "加入房间"
+	},
+	{
+		"id": "rbjNYR",
+		"defaultMessage": "Room Number: {id}",
+		"message": "房间号：{id}"
 	},
 	{
 		"id": "team-other",

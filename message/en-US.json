@@ -25,6 +25,11 @@
 		"message": "Drunk"
 	},
 	{
+		"id": "gjBiyj",
+		"defaultMessage": "Loading...",
+		"message": "Loading..."
+	},
+	{
 		"id": "H/XqXJ",
 		"defaultMessage": "Increase",
 		"message": "Increase"
@@ -73,6 +78,11 @@
 		"id": "MKDHEa",
 		"defaultMessage": "Join Room",
 		"message": "Join Room"
+	},
+	{
+		"id": "rbjNYR",
+		"defaultMessage": "Room Number: {id}",
+		"message": "Room Number: {id}"
 	},
 	{
 		"id": "team-other",

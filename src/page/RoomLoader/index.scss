@@ -1,0 +1,11 @@
+.room-loader {
+	display: flex;
+	flex-direction: row;
+	align-items: center;
+
+	.main-message {
+		width: 100%;
+		text-align: center;
+		text-shadow: rgb(37, 37, 37) 0 0 2px;
+	}
+}

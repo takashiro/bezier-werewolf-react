@@ -26,7 +26,7 @@ export function deserialize(context: string): Context {
 
 	const paths = context.substring(1).split('/');
 	const type = paths[0] as ContextType ?? ContextType.Lobby;
-	const id = paths[1] && Number.parseInt(paths[1], 10) || undefined;
+	const id = (paths[1] && Number.parseInt(paths[1], 10)) || undefined;
 	return {
 		type,
 		id,
