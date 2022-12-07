@@ -100,6 +100,21 @@
 		"message": "Room Number: {id}"
 	},
 	{
+		"id": "seer-background",
+		"defaultMessage": "You are about to get asleep but found something is weird in the prophecy, something about murder.",
+		"message": "You are about to get asleep but found something is weird in the prophecy, something about murder."
+	},
+	{
+		"id": "seer-instruction",
+		"defaultMessage": "You can check either a role card of a player or two center cards.",
+		"message": "You can check either a role card of a player or two center cards."
+	},
+	{
+		"id": "seer-name",
+		"defaultMessage": "Seer",
+		"message": "Seer"
+	},
+	{
 		"id": "team-other",
 		"defaultMessage": "Others",
 		"message": "Others"

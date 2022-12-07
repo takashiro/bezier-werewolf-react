@@ -100,6 +100,21 @@
 		"message": "房间号：{id}"
 	},
 	{
+		"id": "seer-background",
+		"defaultMessage": "You are about to get asleep but found something is weird in the prophecy, something about murder.",
+		"message": "你正要入睡，预言球突然有些异样 —— 村庄里似乎暗藏杀机。"
+	},
+	{
+		"id": "seer-instruction",
+		"defaultMessage": "You can check either a role card of a player or two center cards.",
+		"message": "你可以查看1名其他玩家的身份牌或2张未使用的牌。"
+	},
+	{
+		"id": "seer-name",
+		"defaultMessage": "Seer",
+		"message": "预言家"
+	},
+	{
 		"id": "team-other",
 		"defaultMessage": "Others",
 		"message": "其他角色"
