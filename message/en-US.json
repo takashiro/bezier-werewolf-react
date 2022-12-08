@@ -95,6 +95,11 @@
 		"message": "Join Room"
 	},
 	{
+		"id": "mPaDfU",
+		"defaultMessage": "The room does not exist.",
+		"message": "The room does not exist."
+	},
+	{
 		"id": "rbjNYR",
 		"defaultMessage": "Room Number: {id}",
 		"message": "Room Number: {id}"

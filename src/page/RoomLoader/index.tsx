@@ -6,6 +6,7 @@ import './index.scss';
 
 const desc = defineMessages({
 	loading: { defaultMessage: 'Loading...' },
+	notFound: { defaultMessage: 'The room does not exist.' },
 });
 
 interface RoomLoaderProps {
@@ -19,19 +20,28 @@ export default function RoomLoader({
 }: RoomLoaderProps): JSX.Element {
 	const intl = useIntl();
 
-	React.useEffect(() => {
+	const [loading, setLoading] = React.useState(true);
+
+	async function enterRoom(): Promise<void> {
 		if (!id) {
+			setLoading(false);
 			return;
 		}
 
-		setTimeout(() => {
-			lobby.enterRoom(id);
-		}, 0);
+		try {
+			await lobby.enterRoom(id);
+		} catch (error) {
+			setLoading(false);
+		}
+	}
+
+	React.useEffect(() => {
+		enterRoom();
 	}, [lobby, id]);
 
 	return (
 		<div className="main-message">
-			{intl.formatMessage(desc.loading)}
+			{intl.formatMessage(loading ? desc.loading : desc.notFound)}
 		</div>
 	);
 }
