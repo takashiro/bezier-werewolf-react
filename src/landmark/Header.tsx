@@ -13,6 +13,11 @@ const desc = defineMessages({
 export default function Header(): JSX.Element {
 	const intl = useIntl();
 	const title = intl.formatMessage(desc.title);
+
+	React.useEffect(() => {
+		document.title = title;
+	}, []);
+
 	return (
 		<header>
 			<h1>
