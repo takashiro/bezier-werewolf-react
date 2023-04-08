@@ -36,7 +36,8 @@ export default function RoomLoader({
 	}
 
 	React.useEffect(() => {
-		enterRoom();
+		// Wait until all event listeners are bound
+		setTimeout(enterRoom, 0);
 	}, [lobby, id]);
 
 	return (
