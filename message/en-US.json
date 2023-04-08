@@ -1,5 +1,10 @@
 [
 	{
+		"id": "0iLa9I",
+		"defaultMessage": "The seat has been taken.",
+		"message": "The seat has been taken."
+	},
+	{
 		"id": "47FYwb",
 		"defaultMessage": "Cancel",
 		"message": "Cancel"
@@ -8,6 +13,11 @@
 		"id": "CMbX51",
 		"defaultMessage": "Create Room",
 		"message": "Create Room"
+	},
+	{
+		"id": "Djijb0",
+		"defaultMessage": "No.{seat} {role}",
+		"message": "No.{seat} {role}"
 	},
 	{
 		"id": "drunk-background",
@@ -33,6 +43,11 @@
 		"id": "H/XqXJ",
 		"defaultMessage": "Increase",
 		"message": "Increase"
+	},
+	{
+		"id": "HogrCa",
+		"defaultMessage": "Seat Number",
+		"message": "Seat Number"
 	},
 	{
 		"id": "hunter-background",
@@ -90,6 +105,11 @@
 		"message": "Minion"
 	},
 	{
+		"id": "MjhDHp",
+		"defaultMessage": "Your Role",
+		"message": "Your Role"
+	},
+	{
 		"id": "MKDHEa",
 		"defaultMessage": "Join Room",
 		"message": "Join Room"
@@ -98,6 +118,16 @@
 		"id": "mPaDfU",
 		"defaultMessage": "The room does not exist.",
 		"message": "The room does not exist."
+	},
+	{
+		"id": "OjesVG",
+		"defaultMessage": "Please type a valid seat number.",
+		"message": "Please type a valid seat number."
+	},
+	{
+		"id": "QRx4Om",
+		"defaultMessage": "Unknown Error: {messsage}",
+		"message": "Unknown Error: {messsage}"
 	},
 	{
 		"id": "rbjNYR",
@@ -198,5 +228,10 @@
 		"id": "werewolf-name",
 		"defaultMessage": "Werewolf",
 		"message": "Werewolf"
+	},
+	{
+		"id": "zIg54F",
+		"defaultMessage": "View Your Role",
+		"message": "View Your Role"
 	}
 ]

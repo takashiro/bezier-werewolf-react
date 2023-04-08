@@ -7,6 +7,7 @@ import {
 } from '@bezier/werewolf-client';
 
 import TeamProfile from './TeamProfile';
+import RoleViewer from './RoleViewer';
 
 import './index.scss';
 
@@ -37,6 +38,9 @@ export default function Room(props: RoomProps): JSX.Element {
 					roles={roles}
 				/>
 			))}
+			<RoleViewer
+				room={room}
+			/>
 		</>
 	);
 }
