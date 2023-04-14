@@ -90,6 +90,11 @@
 		"message": "Decrease"
 	},
 	{
+		"id": "KOV0fk",
+		"defaultMessage": "View My Role",
+		"message": "View My Role"
+	},
+	{
 		"id": "minion-background",
 		"defaultMessage": "You saw what the werewolves were doing at night and decided to help them. You want revenge. The village must be destroyed.",
 		"message": "You saw what the werewolves were doing at night and decided to help them. You want revenge. The village must be destroyed."
@@ -228,10 +233,5 @@
 		"id": "werewolf-name",
 		"defaultMessage": "Werewolf",
 		"message": "Werewolf"
-	},
-	{
-		"id": "zIg54F",
-		"defaultMessage": "View Your Role",
-		"message": "View Your Role"
 	}
 ]

@@ -5,7 +5,7 @@ import Clickable from '../../../base/Clickable';
 
 const desc = defineMessages({
 	seatNumber: { defaultMessage: 'Seat Number' },
-	viewRole: { defaultMessage: 'View Your Role' },
+	viewRole: { defaultMessage: 'View My Role' },
 });
 
 interface SeatFormProps {
@@ -34,6 +34,7 @@ export default function SeatForm({
 		onSubmit?.(seat);
 	}, [input, onSubmit]);
 
+	const label = intl.formatMessage(desc.seatNumber);
 	return (
 		<div className="seat-form">
 			<input
@@ -41,7 +42,8 @@ export default function SeatForm({
 				type="number"
 				min={min}
 				max={max}
-				placeholder={intl.formatMessage(desc.seatNumber)}
+				placeholder={label}
+				aria-label={label}
 			/>
 			<Clickable
 				className="button"
