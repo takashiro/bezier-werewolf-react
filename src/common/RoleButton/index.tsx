@@ -43,7 +43,6 @@ export default function RoleButton<T>(props: RoleButtonProps<T>): JSX.Element {
 			className={classNames('role-button', { selected })}
 			onTrigger={toggle}
 			aria-pressed={selected}
-			aria-label={label}
 		>
 			<RoleIcon
 				icon={icon}
