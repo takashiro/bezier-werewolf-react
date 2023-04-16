@@ -30,13 +30,13 @@ export default function RoleButton(props: RoleButtonProps): JSX.Element {
 
 	const [selected, setSelected] = React.useState(defaultSelected);
 
-	const toggle = React.useCallback(() => {
+	function toggle(): void {
 		setSelected((prev) => {
 			const cur = !prev;
 			onChange?.({ role, selected: cur });
 			return cur;
 		});
-	}, [setSelected, onChange]);
+	}
 
 	const icon = Role[role];
 	const label = intl.formatMessage({

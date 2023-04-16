@@ -20,17 +20,17 @@ export default function Clickable<T extends HTMLElement = HTMLDivElement>(props:
 		...otherProps
 	} = props;
 
-	const handleClick = React.useCallback((e: React.MouseEvent<T>) => {
+	function handleClick(e: React.MouseEvent<T>): void {
 		onTrigger?.(e);
 		onClick?.(e);
-	}, [onTrigger, onClick]);
+	}
 
-	const handleKeyDown = React.useCallback((e: React.KeyboardEvent<T>) => {
+	function handleKeyDown(e: React.KeyboardEvent<T>): void {
 		if (onTrigger && keyboard.isConfirmed(e) && !keyboard.isModiferKeyPressed(e)) {
 			onTrigger(e);
 		}
 		onKeyDown?.(e);
-	}, [onTrigger, onKeyDown]);
+	}
 
 	return (
 		<Component

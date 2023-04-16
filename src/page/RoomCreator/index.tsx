@@ -54,18 +54,18 @@ export default function RoomCreator({ onSubmit }: RoomCreatorProps): JSX.Element
 
 	const [teams] = React.useState(loadTeams);
 
-	const handleChange = React.useCallback((e: RoleChangeEvent) => {
+	function handleChange(e: RoleChangeEvent): void {
 		config.setRoleNum(e.role, e.num);
-	}, []);
+	}
 
-	const handleSubmit = React.useCallback(async () => {
+	async function handleSubmit(): Promise<void> {
 		config.save();
 		onSubmit?.(config);
-	}, []);
+	}
 
-	const handleCancel = React.useCallback(() => {
+	function handleCancel(): void {
 		go({ type: ContextType.Lobby });
-	}, []);
+	}
 
 	return (
 		<>

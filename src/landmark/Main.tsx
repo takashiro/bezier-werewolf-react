@@ -17,10 +17,10 @@ export default function Main(): JSX.Element {
 	const lobby = React.useMemo(createLobby, []);
 	const [context, setContext] = React.useState(initialContext);
 
-	const createRoom = React.useCallback((config: RoomConfiguration) => {
+	function createRoom(config: RoomConfiguration): void {
 		const roles = config.getRoles();
 		lobby.createRoom({ roles });
-	}, []);
+	}
 
 	React.useEffect(() => {
 		function handleContextChange(e: PopStateEvent): void {

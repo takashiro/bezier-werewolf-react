@@ -35,9 +35,9 @@ export default function TeamSelector(props: TeamSelectorProps): JSX.Element {
 		onChange,
 	} = props;
 
-	const handleSelectedChange = React.useCallback((e: ChangeEvent) => {
+	function handleSelectedChange(e: ChangeEvent): void {
 		onChange?.(convertChangeEvent(e));
-	}, [onChange]);
+	}
 
 	return (
 		<section className="team team-selector">

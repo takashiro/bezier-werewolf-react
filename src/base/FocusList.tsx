@@ -33,7 +33,7 @@ export default function FocusList(props: FocusListProps): JSX.Element {
 		...otherProps
 	} = props;
 
-	const handleKeyDown = React.useCallback((e: React.KeyboardEvent<HTMLElement>) => {
+	function handleKeyDown(e: React.KeyboardEvent<HTMLElement>): void {
 		if (!isModiferKeyPressed(e)) {
 			if (e.key === (orientation === 'vertical' ? 'ArrowUp' : 'ArrowLeft')) {
 				moveFocus(e, childSelector, -1);
@@ -47,7 +47,7 @@ export default function FocusList(props: FocusListProps): JSX.Element {
 			}
 		}
 		onKeyDown?.(e);
-	}, [childSelector, onKeyDown]);
+	}
 
 	return (
 		<Component

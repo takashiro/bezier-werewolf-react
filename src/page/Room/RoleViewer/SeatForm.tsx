@@ -22,7 +22,7 @@ export default function SeatForm({
 	const intl = useIntl();
 	const input = React.useRef<HTMLInputElement>(null);
 
-	const handleSubmit = React.useCallback(() => {
+	function handleSubmit(): void {
 		const inputValue = input.current?.value;
 		if (!inputValue) {
 			return;
@@ -32,7 +32,7 @@ export default function SeatForm({
 			return;
 		}
 		onSubmit?.(seat);
-	}, [input, onSubmit]);
+	}
 
 	const label = intl.formatMessage(desc.seatNumber);
 	return (

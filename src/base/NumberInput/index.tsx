@@ -35,7 +35,7 @@ export default function NumberInput(props: NumberInputProps): JSX.Element {
 
 	const input = React.useRef<HTMLInputElement>(null);
 
-	const change = React.useCallback((delta: number) => {
+	function change(delta: number): void {
 		const element = input.current;
 		if (!element) {
 			return;
@@ -52,20 +52,20 @@ export default function NumberInput(props: NumberInputProps): JSX.Element {
 			element.value = String(newValue);
 			onChange?.({ name, value: newValue });
 		}
-	}, [input, min, max]);
+	}
 
-	const handleDecrease = React.useCallback(() => {
+	function handleDecrease(): void {
 		change(-1);
-	}, [change]);
+	}
 
-	const handleIncrease = React.useCallback(() => {
+	function handleIncrease(): void {
 		change(1);
-	}, [change]);
+	}
 
-	const handleChange = (e: React.ChangeEvent<HTMLInputElement>) => {
+	function handleChange(e: React.ChangeEvent<HTMLInputElement>): void {
 		const value = Number.parseInt(e.currentTarget.value, 10) || 0;
 		onChange?.({ name, value });
-	};
+	}
 
 	return (
 		<div className="number-input">
