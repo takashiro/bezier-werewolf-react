@@ -20,6 +20,7 @@ export default function Lobby(): JSX.Element {
 		go({ type: ContextType.RoomCreator });
 	}
 
+	const roomNumberLabel = intl.formatMessage(desc.roomNumber);
 	return (
 		<>
 			<div className="creator">
@@ -30,7 +31,8 @@ export default function Lobby(): JSX.Element {
 			<div className="entrance">
 				<input
 					type="number"
-					placeholder={intl.formatMessage(desc.roomNumber)}
+					placeholder={roomNumberLabel}
+					aria-label={roomNumberLabel}
 				/>
 				<button type="button">
 					{intl.formatMessage(desc.enterRoom)}

@@ -1,12 +1,25 @@
 import { Locator, Page } from '@playwright/test';
 
 import LocatorOptions from './LocatorOptions';
+import Region from '../landmark/Region';
 
 export default abstract class BasicPage {
 	protected readonly page: Page;
 
 	constructor(page: Page) {
 		this.page = page;
+	}
+
+	getBanner(): Region {
+		return new Region(this.getByRole('banner'));
+	}
+
+	getMain(): Region {
+		return new Region(this.getByRole('main'));
+	}
+
+	getContentInfo(): Region {
+		return new Region(this.getByRole('contentinfo'));
 	}
 
 	locator(selector: string, options?: LocatorOptions) {
