@@ -7,6 +7,7 @@ import { DashboardPlayer, Room } from '@bezier/werewolf-client';
 
 import RoleCard from '../../../common/RoleCard';
 import SeatForm from './SeatForm';
+import { formatName, formatBackground, formatInstruction } from '../../../util/role';
 
 import './index.scss';
 
@@ -81,8 +82,6 @@ export default function RoleViewer(props: RoleViewerProps): JSX.Element {
 
 	const config = room.getConfig();
 	const playerNum = config && (config.roles.length - (config.cardNum ?? 3));
-	const icon = Role[role];
-	const id = icon.toLowerCase();
 
 	return (
 		<section className="role-viewer">
@@ -103,17 +102,10 @@ export default function RoleViewer(props: RoleViewerProps): JSX.Element {
 			) : (
 				<RoleCard
 					seat={seat}
-					icon={icon}
-					name={intl.formatMessage({
-						id: `${id}-name`,
-						defaultMessage: Role[role],
-					})}
-					background={intl.formatMessage({
-						id: `${id}-background`,
-					})}
-					instruction={intl.formatMessage({
-						id: `${id}-instruction`,
-					})}
+					icon={Role[role]}
+					name={formatName(intl, role)}
+					background={formatBackground(intl, role)}
+					instruction={formatInstruction(intl, role)}
 				/>
 			)}
 		</section>

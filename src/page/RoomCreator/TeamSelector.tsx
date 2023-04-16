@@ -6,6 +6,7 @@ import { RoomConfiguration } from '@bezier/werewolf-client';
 
 import FocusList from '../../base/FocusList';
 import RoleButton, { ChangeEvent } from '../../common/RoleButton';
+import { formatName } from '../../util/role';
 
 import RoleInput from './RoleInput';
 import RoleChangeEvent from './RoleChangeEvent';
@@ -18,9 +19,9 @@ interface TeamSelectorProps {
 	onChange?(e: RoleChangeEvent): void;
 }
 
-function convertChangeEvent(e: ChangeEvent): RoleChangeEvent {
+function convertChangeEvent(e: ChangeEvent<Role>): RoleChangeEvent {
 	return {
-		role: e.role,
+		role: e.id,
 		num: e.selected ? 1 : 0,
 	};
 }
@@ -35,7 +36,7 @@ export default function TeamSelector(props: TeamSelectorProps): JSX.Element {
 		onChange,
 	} = props;
 
-	function handleSelectedChange(e: ChangeEvent): void {
+	function handleSelectedChange(e: ChangeEvent<Role>): void {
 		onChange?.(convertChangeEvent(e));
 	}
 
@@ -53,7 +54,9 @@ export default function TeamSelector(props: TeamSelectorProps): JSX.Element {
 				{roles.filter((role) => role !== primary).map((role) => (
 					<li key={`role-${role}`}>
 						<RoleButton
-							role={role}
+							id={role}
+							icon={Role[role]}
+							label={formatName(intl, role)}
 							defaultSelected={config.getRoleNum(role) > 0}
 							onChange={handleSelectedChange}
 						/>

@@ -1,29 +1,29 @@
 import React from 'react';
-import { useIntl } from 'react-intl';
 import classNames from 'classnames';
-
-import { Role } from '@bezier/werewolf-core';
 
 import Clickable from '../../base/Clickable';
 import RoleIcon from '../RoleIcon';
 
 import './index.scss';
 
-export interface ChangeEvent {
-	role: Role;
+export interface ChangeEvent<T> {
+	id: T;
 	selected: boolean;
 }
 
-interface RoleButtonProps {
-	role: Role;
+interface RoleButtonProps<T> {
+	id: T;
+	icon: string;
+	label: string;
 	defaultSelected?: boolean;
-	onChange?(e: ChangeEvent): void;
+	onChange?(e: ChangeEvent<T>): void;
 }
 
-export default function RoleButton(props: RoleButtonProps): JSX.Element {
-	const intl = useIntl();
+export default function RoleButton<T>(props: RoleButtonProps<T>): JSX.Element {
 	const {
-		role,
+		id,
+		icon,
+		label,
 		defaultSelected = false,
 		onChange,
 	} = props;
@@ -33,16 +33,11 @@ export default function RoleButton(props: RoleButtonProps): JSX.Element {
 	function toggle(): void {
 		setSelected((prev) => {
 			const cur = !prev;
-			onChange?.({ role, selected: cur });
+			onChange?.({ id, selected: cur });
 			return cur;
 		});
 	}
 
-	const icon = Role[role];
-	const label = intl.formatMessage({
-		id: `${icon.toLowerCase()}-name`,
-		defaultMessage: icon,
-	});
 	return (
 		<Clickable
 			className={classNames('role-button', { selected })}
