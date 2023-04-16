@@ -17,6 +17,7 @@ interface RoleInputProps {
 
 export default function RoleInput(props: RoleInputProps): JSX.Element {
 	const intl = useIntl();
+	const labelId = React.useId();
 	const {
 		role,
 		defaultValue,
@@ -36,6 +37,7 @@ export default function RoleInput(props: RoleInputProps): JSX.Element {
 	return (
 		<div className="role-input">
 			<RoleIcon
+				id={labelId}
 				icon={Role[role]}
 				name={roleName}
 			/>
@@ -44,6 +46,7 @@ export default function RoleInput(props: RoleInputProps): JSX.Element {
 				min={0}
 				max={5}
 				onChange={handleChange}
+				aria-labelledby={labelId}
 			/>
 		</div>
 	);

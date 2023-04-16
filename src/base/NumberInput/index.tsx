@@ -21,6 +21,7 @@ interface NumberInputProps {
 	min?: number;
 	max?: number;
 	onChange?(e: ChangeEvent): void;
+	'aria-labelledby'?: string;
 }
 
 export default function NumberInput(props: NumberInputProps): JSX.Element {
@@ -31,6 +32,7 @@ export default function NumberInput(props: NumberInputProps): JSX.Element {
 		min,
 		max,
 		onChange,
+		'aria-labelledby': ariaLabelledBy,
 	} = props;
 
 	const input = React.useRef<HTMLInputElement>(null);
@@ -82,6 +84,7 @@ export default function NumberInput(props: NumberInputProps): JSX.Element {
 				min={min}
 				max={max}
 				onChange={handleChange}
+				aria-labelledby={ariaLabelledBy}
 			/>
 			<Clickable
 				tabIndex={-1}
