@@ -23,20 +23,12 @@ const errorCode = new Map<number, MessageDescriptor>([
 	[409, desc.seatTaken],
 ]);
 
-interface DashboardModel {
-	seat: number;
-}
-
 interface RoleViewerProps {
 	room: Room;
 }
 
-export default function RoleViewer(props: RoleViewerProps): JSX.Element {
+export default function RoleViewer({ room }: RoleViewerProps): JSX.Element {
 	const intl = useIntl();
-
-	const {
-		room,
-	} = props;
 
 	const [seat, setSeat] = React.useState(0);
 	const [role, setRole] = React.useState(Role.Unknown);
@@ -62,14 +54,14 @@ export default function RoleViewer(props: RoleViewerProps): JSX.Element {
 	}
 
 	React.useEffect(() => {
-		let me: Partial<DashboardModel>;
+		let seat: number | undefined;
 		try {
-			me = room.readItem('dashboard') as Partial<DashboardModel>;
+			seat = room.getDashboardSeat();
 		} catch (error) {
 			return;
 		}
-		if (me?.seat) {
-			const player = room.createPlayer(me.seat);
+		if (seat) {
+			const player = room.createPlayer(seat);
 			updateProfile(player);
 		}
 	}, []);
@@ -77,7 +69,6 @@ export default function RoleViewer(props: RoleViewerProps): JSX.Element {
 	function handleSubmit(seat: number): void {
 		const player = room.createPlayer(seat);
 		updateProfile(player);
-		room.saveItem('dashboard', { seat });
 	}
 
 	const config = room.getConfig();
