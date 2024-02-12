@@ -45,6 +45,11 @@
 		"message": "增加"
 	},
 	{
+		"id": "hCurVF",
+		"defaultMessage": "Choose Your Role",
+		"message": "选择角色"
+	},
+	{
 		"id": "HogrCa",
 		"defaultMessage": "Seat Number",
 		"message": "座位号"

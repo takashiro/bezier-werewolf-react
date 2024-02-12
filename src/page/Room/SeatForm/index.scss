@@ -1,0 +1,12 @@
+.seat-form {
+	h3 {
+		text-align: center;
+	}
+
+	input[type="number"],
+	> .button {
+		display: block;
+		width: 120px;
+		margin: 10px auto;
+	}
+}

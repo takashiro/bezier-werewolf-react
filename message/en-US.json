@@ -45,6 +45,11 @@
 		"message": "Increase"
 	},
 	{
+		"id": "hCurVF",
+		"defaultMessage": "Choose Your Role",
+		"message": "Choose Your Role"
+	},
+	{
 		"id": "HogrCa",
 		"defaultMessage": "Seat Number",
 		"message": "Seat Number"

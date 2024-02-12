@@ -2,6 +2,7 @@ import React from 'react';
 import { defineMessages, useIntl } from 'react-intl';
 
 import {
+	DashboardPlayer,
 	Room as RoomModel,
 	TeamProfile as TeamModel,
 } from '@bezier/werewolf-client';
@@ -10,6 +11,7 @@ import TeamProfile from './TeamProfile';
 import RoleViewer from './RoleViewer';
 
 import './index.scss';
+import SeatForm from './SeatForm';
 
 const desc = defineMessages({
 	roomNumber: { defaultMessage: 'Room Number: {id}' },
@@ -19,14 +21,22 @@ interface RoomProps {
 	room: RoomModel;
 }
 
-export default function Room(props: RoomProps): JSX.Element {
+export default function Room({ room }: RoomProps): JSX.Element {
 	const intl = useIntl();
-	const {
-		room,
-	} = props;
-
 	const roles = room.getRoles();
-	const teams = roles && TeamModel.fromRoles(roles);
+	const teams = React.useMemo(() => roles && TeamModel.fromRoles(roles), [roles]);
+
+	const [player, setPlayer] = React.useState<DashboardPlayer | undefined>(() => {
+		let seat: number | undefined;
+		try {
+			seat = room.getDashboardSeat();
+		} catch (error) {
+			return;
+		}
+		if (seat) {
+			return room.createPlayer(seat);
+		}
+	});
 
 	return (
 		<>
@@ -38,9 +48,7 @@ export default function Room(props: RoomProps): JSX.Element {
 					roles={roles}
 				/>
 			))}
-			<RoleViewer
-				room={room}
-			/>
+			{player ? <RoleViewer player={player} /> : <SeatForm room={room} onSelect={setPlayer} />}
 		</>
 	);
 }
