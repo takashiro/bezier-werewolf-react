@@ -57,7 +57,9 @@ export default function config(env, argv) {
 							getCustomTransformers() {
 								return {
 									before: [
-										transform(),
+										transform({
+											config: '.linguistrc.cjs',
+										}),
 									],
 								};
 							},

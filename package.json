@@ -9,7 +9,10 @@
     "build": "webpack",
     "debug": "webpack --mode=development",
     "test": "npm run lint && playwright test",
-    "lint": "eslint --ext=ts,tsx,js --max-warnings=0 ."
+    "lint": "eslint --ext=ts,tsx,js --max-warnings=0 .",
+    "update-messages": "linguist update --config=.linguistrc.cjs",
+    "release-messages": "linguist release --config=.linguistrc.cjs",
+    "prune-messages": "linguist prune --config=.linguistrc.cjs"
   },
   "repository": {
     "type": "git",
