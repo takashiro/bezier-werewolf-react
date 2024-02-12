@@ -69,13 +69,13 @@ export default function RoleViewer(props: RoleViewerProps): JSX.Element {
 			return;
 		}
 		if (me?.seat) {
-			const player = room.getPlayer(me.seat);
+			const player = room.createPlayer(me.seat);
 			updateProfile(player);
 		}
 	}, []);
 
 	function handleSubmit(seat: number): void {
-		const player = room.getPlayer(seat);
+		const player = room.createPlayer(seat);
 		updateProfile(player);
 		room.saveItem('dashboard', { seat });
 	}
